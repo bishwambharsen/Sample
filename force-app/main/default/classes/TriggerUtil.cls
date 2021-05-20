@@ -12,6 +12,7 @@ public inherited sharing class TriggerUtil {
       SELECT Id, (SELECT Id FROM Contacts)
       FROM Account
       WHERE Id IN :accountIds
+      WITH security_enforced
     ]) {
       Account updatedAccount = new Account(
         Id = a.Id,
