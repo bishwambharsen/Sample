@@ -2,7 +2,7 @@ public inherited sharing class TriggerUtil {
   public static void summariseChildData(List<Contact> newList) {
     Set<Id> accountIds = new Set<Id>();
 
-    for (Contact con : [SELECT AccountId FROM Contact WHERE Id IN :newList]) {
+    for (Contact con : newList) {
       accountIds.add(con.AccountId);
     }
 
